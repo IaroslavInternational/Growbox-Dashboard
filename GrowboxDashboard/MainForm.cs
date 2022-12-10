@@ -1,8 +1,10 @@
+using FontAwesome.Sharp;
+
 namespace GrowboxDashboard
 {
     public partial class MainForm : Form
     {
-        private Button currentBtn;
+        private IconButton currentBtn;
         private Form   currentChildForm;
         private Panel  leftBorderBtn;
 
@@ -26,8 +28,10 @@ namespace GrowboxDashboard
             {
                 DisableButton();
 
-                currentBtn = (Button)senderBtn;
+                currentBtn = (IconButton)senderBtn;
                 currentBtn.ForeColor = color;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
 
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
@@ -41,6 +45,8 @@ namespace GrowboxDashboard
             if (currentBtn != null)
             {
                 currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             }
         }
 
@@ -65,17 +71,17 @@ namespace GrowboxDashboard
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ActiveButton(manage_btn, Color.FromArgb(235, 197, 28));
+            ActiveButton(manageBtn, Color.FromArgb(235, 197, 28));
             OpenChildForm(new ManageForm());
         }
 
-        private void manage_btn_Click(object sender, EventArgs e)
+        private void manageBtn_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.FromArgb(235, 197, 28));
             OpenChildForm(new ManageForm());
         }
 
-        private void connection_settings_Click(object sender, EventArgs e)
+        private void settingsBtn_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.FromArgb(235, 197, 28));
             //OpenChildForm(new SettignsForm());
@@ -83,7 +89,7 @@ namespace GrowboxDashboard
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //currentChildForm.Close();
+            currentChildForm.Close();
         }
     }
 }

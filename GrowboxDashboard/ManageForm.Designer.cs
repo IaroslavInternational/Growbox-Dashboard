@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,13 +52,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.blueLightTrack = new System.Windows.Forms.TrackBar();
+            this.greenLightTrack = new System.Windows.Forms.TrackBar();
+            this.redLightTrack = new System.Windows.Forms.TrackBar();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.lightChart = new LiveCharts.WinForms.CartesianChart();
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,9 +74,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueLightTrack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenLightTrack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redLightTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
@@ -311,77 +317,74 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.trackBar3);
-            this.panel4.Controls.Add(this.trackBar2);
-            this.panel4.Controls.Add(this.trackBar1);
+            this.panel4.Controls.Add(this.pictureBox13);
+            this.panel4.Controls.Add(this.pictureBox11);
+            this.panel4.Controls.Add(this.pictureBox10);
+            this.panel4.Controls.Add(this.blueLightTrack);
+            this.panel4.Controls.Add(this.greenLightTrack);
+            this.panel4.Controls.Add(this.redLightTrack);
             this.panel4.Controls.Add(this.pictureBox12);
             this.panel4.Location = new System.Drawing.Point(24, 198);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(525, 184);
             this.panel4.TabIndex = 9;
             // 
-            // label15
+            // pictureBox13
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(483, 120);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 37);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "B";
+            this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
+            this.pictureBox13.Location = new System.Drawing.Point(477, 124);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox13.TabIndex = 14;
+            this.pictureBox13.TabStop = false;
             // 
-            // label14
+            // pictureBox11
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(482, 68);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 37);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "G";
+            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
+            this.pictureBox11.Location = new System.Drawing.Point(477, 74);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox11.TabIndex = 13;
+            this.pictureBox11.TabStop = false;
             // 
-            // label13
+            // pictureBox10
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(483, 17);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 37);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "R";
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
+            this.pictureBox10.Location = new System.Drawing.Point(477, 23);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.TabIndex = 12;
+            this.pictureBox10.TabStop = false;
             // 
-            // trackBar3
+            // blueLightTrack
             // 
-            this.trackBar3.Location = new System.Drawing.Point(164, 119);
-            this.trackBar3.Maximum = 100;
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(313, 45);
-            this.trackBar3.TabIndex = 11;
-            this.trackBar3.TickFrequency = 2;
-            this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.blueLightTrack.Location = new System.Drawing.Point(164, 119);
+            this.blueLightTrack.Maximum = 100;
+            this.blueLightTrack.Name = "blueLightTrack";
+            this.blueLightTrack.Size = new System.Drawing.Size(313, 45);
+            this.blueLightTrack.TabIndex = 11;
+            this.blueLightTrack.TickFrequency = 2;
+            this.blueLightTrack.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
-            // trackBar2
+            // greenLightTrack
             // 
-            this.trackBar2.Location = new System.Drawing.Point(164, 68);
-            this.trackBar2.Maximum = 100;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(313, 45);
-            this.trackBar2.TabIndex = 10;
-            this.trackBar2.TickFrequency = 2;
-            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.greenLightTrack.Location = new System.Drawing.Point(164, 68);
+            this.greenLightTrack.Maximum = 100;
+            this.greenLightTrack.Name = "greenLightTrack";
+            this.greenLightTrack.Size = new System.Drawing.Size(313, 45);
+            this.greenLightTrack.TabIndex = 10;
+            this.greenLightTrack.TickFrequency = 2;
+            this.greenLightTrack.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
-            // trackBar1
+            // redLightTrack
             // 
-            this.trackBar1.Location = new System.Drawing.Point(164, 17);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(313, 45);
-            this.trackBar1.TabIndex = 9;
-            this.trackBar1.TickFrequency = 2;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.redLightTrack.Location = new System.Drawing.Point(164, 17);
+            this.redLightTrack.Maximum = 100;
+            this.redLightTrack.Name = "redLightTrack";
+            this.redLightTrack.Size = new System.Drawing.Size(313, 45);
+            this.redLightTrack.TabIndex = 9;
+            this.redLightTrack.TickFrequency = 2;
+            this.redLightTrack.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
             // pictureBox12
             // 
@@ -394,11 +397,25 @@
             this.pictureBox12.TabIndex = 2;
             this.pictureBox12.TabStop = false;
             // 
+            // lightChart
+            // 
+            this.lightChart.Location = new System.Drawing.Point(570, 198);
+            this.lightChart.Name = "lightChart";
+            this.lightChart.Size = new System.Drawing.Size(252, 184);
+            this.lightChart.TabIndex = 11;
+            this.lightChart.Text = "cartesianChart1";
+            // 
+            // mainTimer
+            // 
+            this.mainTimer.Interval = 1;
+            this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 541);
+            this.Controls.Add(this.lightChart);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -406,6 +423,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageForm";
             this.Text = "ManageForm";
+            this.Load += new System.EventHandler(this.ManageForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -423,9 +441,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueLightTrack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenLightTrack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redLightTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
 
@@ -455,12 +476,14 @@
         private Label label8;
         private Label label9;
         private Panel panel4;
-        private Label label15;
-        private Label label14;
-        private Label label13;
-        private TrackBar trackBar3;
-        private TrackBar trackBar2;
-        private TrackBar trackBar1;
+        private TrackBar blueLightTrack;
+        private TrackBar greenLightTrack;
+        private TrackBar redLightTrack;
         private PictureBox pictureBox12;
+        private PictureBox pictureBox13;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox10;
+        private LiveCharts.WinForms.CartesianChart lightChart;
+        private System.Windows.Forms.Timer mainTimer;
     }
 }

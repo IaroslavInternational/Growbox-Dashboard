@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.connection_settings = new System.Windows.Forms.Button();
-            this.manage_btn = new System.Windows.Forms.Button();
+            this.settingsBtn = new FontAwesome.Sharp.IconButton();
+            this.manageBtn = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.main_panel = new System.Windows.Forms.Panel();
@@ -41,8 +41,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(42)))));
-            this.panelMenu.Controls.Add(this.connection_settings);
-            this.panelMenu.Controls.Add(this.manage_btn);
+            this.panelMenu.Controls.Add(this.settingsBtn);
+            this.panelMenu.Controls.Add(this.manageBtn);
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -50,39 +50,45 @@
             this.panelMenu.Size = new System.Drawing.Size(238, 541);
             this.panelMenu.TabIndex = 0;
             // 
-            // connection_settings
+            // settingsBtn
             // 
-            this.connection_settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.connection_settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.connection_settings.FlatAppearance.BorderSize = 0;
-            this.connection_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.connection_settings.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.connection_settings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.connection_settings.Location = new System.Drawing.Point(0, 188);
-            this.connection_settings.Name = "connection_settings";
-            this.connection_settings.Size = new System.Drawing.Size(238, 60);
-            this.connection_settings.TabIndex = 2;
-            this.connection_settings.Text = "Подключение";
-            this.connection_settings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.connection_settings.UseVisualStyleBackColor = true;
-            this.connection_settings.Click += new System.EventHandler(this.connection_settings_Click);
+            this.settingsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsBtn.FlatAppearance.BorderSize = 0;
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.settingsBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.settingsBtn.IconChar = FontAwesome.Sharp.IconChar.ListDots;
+            this.settingsBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.settingsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.settingsBtn.IconSize = 30;
+            this.settingsBtn.Location = new System.Drawing.Point(0, 188);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(238, 60);
+            this.settingsBtn.TabIndex = 4;
+            this.settingsBtn.Text = "Настройки";
+            this.settingsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
-            // manage_btn
+            // manageBtn
             // 
-            this.manage_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.manage_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.manage_btn.FlatAppearance.BorderSize = 0;
-            this.manage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.manage_btn.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.manage_btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.manage_btn.Location = new System.Drawing.Point(0, 128);
-            this.manage_btn.Name = "manage_btn";
-            this.manage_btn.Size = new System.Drawing.Size(238, 60);
-            this.manage_btn.TabIndex = 1;
-            this.manage_btn.Text = "Управление";
-            this.manage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.manage_btn.UseVisualStyleBackColor = true;
-            this.manage_btn.Click += new System.EventHandler(this.manage_btn_Click);
+            this.manageBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.manageBtn.FlatAppearance.BorderSize = 0;
+            this.manageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageBtn.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.manageBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.manageBtn.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.manageBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.manageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.manageBtn.IconSize = 30;
+            this.manageBtn.Location = new System.Drawing.Point(0, 128);
+            this.manageBtn.Name = "manageBtn";
+            this.manageBtn.Size = new System.Drawing.Size(238, 60);
+            this.manageBtn.TabIndex = 3;
+            this.manageBtn.Text = "Управление";
+            this.manageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.manageBtn.UseVisualStyleBackColor = true;
+            this.manageBtn.Click += new System.EventHandler(this.manageBtn_Click);
             // 
             // panel3
             // 
@@ -97,11 +103,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(52, 51);
+            this.label1.Location = new System.Drawing.Point(30, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 30);
+            this.label1.Size = new System.Drawing.Size(179, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "DASHBOARD";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,9 +144,9 @@
 
         private Panel panelMenu;
         private Panel main_panel;
-        private Button manage_btn;
         private Panel panel3;
         private Label label1;
-        private Button connection_settings;
+        private FontAwesome.Sharp.IconButton manageBtn;
+        private FontAwesome.Sharp.IconButton settingsBtn;
     }
 }
